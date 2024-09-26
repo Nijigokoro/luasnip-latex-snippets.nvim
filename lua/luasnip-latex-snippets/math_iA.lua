@@ -90,12 +90,12 @@ function M.retrieve(is_math)
       end, {})
     ),
 
-    parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
-    parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
-    parse_snippet({ trig = "vec", name = "Vector" }, "\\overrightarrow{$1}$0 "),
-    parse_snippet({ trig = "bin", name = "Binomial" }, "\\binom{$1}{$2}$0 "),
-    parse_snippet({ trig = "ubr", name = "Underbar" }, "\\underbar{$1}_{$2}$0 "),
-    parse_snippet({ trig = "mscr", name = "Script" }, "\\mathscr{$1}$0 "),
+    parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1} $0"),
+    parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)} $0"),
+    parse_snippet({ trig = "vec", name = "Vector" }, "\\overrightarrow{$1} $0"),
+    parse_snippet({ trig = "bin", name = "Binomial" }, "\\binom{$1}{$2} $0"),
+    parse_snippet({ trig = "ubr", name = "Underbrace" }, "\\underbrace{$1}_{$2} $0"),
+    parse_snippet({ trig = "mscr", name = "Script" }, "\\mathscr{$1}$0"),
     parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
     parse_snippet({ trig = "sr", name = "Square ^2" }, "^2"),
 
