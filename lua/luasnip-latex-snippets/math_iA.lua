@@ -92,6 +92,8 @@ function M.retrieve(is_math)
 
     parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
     parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
+    parse_snippet({ trig = "vec", name = "Vector" }, "\\overrightarrow{($1)}$0 "),
+    parse_snippet({ trig = "bin", name = "Binomial" }, "\\binom{($2)}{($1)}$0 "),
     parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
     parse_snippet({ trig = "sr", name = "Square ^2" }, "^2"),
 
@@ -104,6 +106,8 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "xjj", name = "xj" }, "x_{j}"),
     parse_snippet({ trig = "yjj", name = "yj" }, "y_{j}"),
     parse_snippet({ trig = "xp1", name = "x" }, "x_{n+1}"),
+    parse_snippet({ trig = "un", name = "un" }, "u_{n}"),
+    parse_snippet({ trig = "up1", name = "un+1" }, "u_{n+1}"),
     parse_snippet({ trig = "xmm", name = "x" }, "x_{m}"),
     parse_snippet({ trig = "R0+", name = "R0+" }, "\\mathbb{R}_0^+"),
 
@@ -150,6 +154,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "ceil", name = "ceil" }, "\\left\\lceil $1 \\right\\rceil $0"),
     parse_snippet({ trig = "OO", name = "emptyset" }, "\\O"),
     parse_snippet({ trig = "RR", name = "R" }, "\\mathbb{R}"),
+    parse_snippet({ trig = "CC", name = "C" }, "\\mathbb{C}"),
     parse_snippet({ trig = "QQ", name = "Q" }, "\\mathbb{Q}"),
     parse_snippet({ trig = "ZZ", name = "Z" }, "\\mathbb{Z}"),
     parse_snippet({ trig = "UU", name = "cup" }, "\\cup "),
