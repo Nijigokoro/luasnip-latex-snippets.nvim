@@ -12,8 +12,27 @@ local TEXT_NODES = {
   label_reference = true,
 }
 
+local function get_node_at_cursor()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  -- Subtract one to account for 1-based row indexing in nvim_win_get_cursor
+  local row, col = pos[1] - 1, pos[2]
+
+  local parser = vim.treesitter.get_parser(0, "latex")
+  if not parser then
+    return
+  end
+
+  local root_tree = parser:parse({ row, col, row, col })[1]
+  local root = root_tree and root_tree:root()
+  if not root then
+    return
+  end
+
+  return root:named_descendant_for_range(row, col, row, col)
+end
+
 function M.in_text(check_parent)
-  local node = vim.treesitter.get_node({ ignore_injections = false })
+  local node = get_node_at_cursor()
   while node do
     if node:type() == "text_mode" then
       if check_parent then
@@ -34,7 +53,7 @@ function M.in_text(check_parent)
 end
 
 function M.in_mathzone()
-  local node = vim.treesitter.get_node({ ignore_injections = false })
+  local node = get_node_at_cursor()
   while node do
     if TEXT_NODES[node:type()] then
       return false
