@@ -155,6 +155,8 @@ function M.retrieve(is_math)
     ),
     parse_snippet({ trig = "ceil", name = "ceil" }, "\\left\\lceil $1 \\right\\rceil $0"),
     parse_snippet({ trig = "OO", name = "emptyset" }, "\\O"),
+    parse_snippet({ trig = "SD", name = "R" }, "\\SR"),
+    parse_snippet({ trig = "SC", name = "R" }, "\\SC"),
     parse_snippet({ trig = "RR", name = "R" }, "\\RR"),
     parse_snippet({ trig = "CC", name = "C" }, "\\CC"),
     parse_snippet({ trig = "QQ", name = "Q" }, "\\QQ"),
